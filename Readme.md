@@ -11,3 +11,6 @@ Basic structure for testing a slowloris attack
 ```bash
 docker-compose up slowloris
 ```
+
+## Built With
+* [gkbrk/slowloris](https://github.com/gkbrk/slowloris) - Simple slowloris in Python

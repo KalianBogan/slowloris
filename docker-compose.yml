@@ -1,10 +1,8 @@
 version: "3.5"
 services:
   slowloris:
-    build: slowloris/
+    image: lesterhrenestr/slowloris
     container_name: slowloris
-    volumes:
-      - ./slowloris/volumes/:/usr/games/attack
     entrypoint:
       - python3
       - /usr/games/attack/run.py
@@ -17,12 +15,10 @@ services:
       - net
 
   nginx:
-    image: nginx
+    image: lesterhrenestr/victim
     container_name: victim
     ports:
       - 8080:80
-    volumes:
-      - ./victim/volumes/nginx.conf:/etc/nginx/nginx.conf
 
     networks:
       - net
